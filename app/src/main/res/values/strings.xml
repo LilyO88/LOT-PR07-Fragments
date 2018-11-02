@@ -6,5 +6,38 @@
     <string name="main_saved_succesfully">Student saved successfully</string>
     <string name="main_error_saving">Error saving student</string>
     <string name="avatar_select">Select</string>
-    <!-- TODO -->
+    <!--  -->
+
+
+    <string name="lblAvatarTom">Tom</string>
+    <string name="imgAvatarDescription">Text of cat\'s name</string>
+
+    <string name="main_lblName">Name</string>
+    <string name="txtName">Name</string>
+
+    <string name="imgPhoneDescription">Phone image</string>
+    <string name="imgEmailDescription">Email image</string>
+    <string name="imgAddressDescription">Address image</string>
+    <string name="imgWebDescription">Web image</string>
+    <string name="nameHint">(name)</string>
+    <string name="textPhonenumber">Phone number</string>
+    <string name="textEmail">email</string>
+    <string name="phoneHint">(phone)</string>
+    <string name="emailHint">(email)</string>
+    <string name="textAddress">Address</string>
+    <string name="addressHint">(address)</string>
+    <string name="textWeb">Web</string>
+    <string name="webHint">(url)</string>
+    <string name="avatar_lblFirstAvatar">Tom</string>
+    <string name="avatar_lblSecondAvatar">Luna</string>
+    <string name="avatar_lblThirdAvatar">Simba</string>
+    <string name="avatar_lblFourthAvatar">Kitty</string>
+    <string name="avatar_lblFifthAvatar">Felix</string>
+    <string name="avatar_lblSixthAvatar">Nina</string>
+    <string name="avatar_sixthAvatarImageDescription">Sixth avatar image</string>
+    <string name="avatar_fifthAvatarImageDescription">Fifth avatar image</string>
+    <string name="avatar_fourthAvatarImageDescription">Fourth avatar image</string>
+    <string name="avatar_thirdAvatarImageDescription">Third avatar image</string>
+    <string name="avatar_secondAvatarImageDescription">Second avatar image</string>
+    <string name="avatar_firstAvatarImageDescription">First avatar image</string>
 </resources>

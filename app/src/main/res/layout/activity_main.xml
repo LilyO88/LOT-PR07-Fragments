@@ -7,8 +7,42 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <!-- TODO -->
+    <ImageView
+        android:id="@+id/imgAvatar"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:contentDescription="@string/imgAvatarDescription"
+        android:scaleType="centerCrop"
+        android:src="@drawable/cat1"
+        app:layout_constraintDimensionRatio="16:9"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
-    <!-- TODO: Include activity_main_xml -->
+    <TextView
+        android:id="@+id/lblAvatar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="@dimen/margin16dp"
+        android:layout_marginBottom="@dimen/margin16dp"
+        android:background="@color/colorBlack"
+        android:backgroundTint="@color/colorBlack"
+        android:padding="@dimen/margin8dp"
+        android:text="@string/lblAvatarTom"
+        android:textColor="@color/white"
+        app:layout_constraintBottom_toBottomOf="@+id/imgAvatar"
+        app:layout_constraintEnd_toEndOf="@+id/imgAvatar" />
+
+    <include
+        android:id="@+id/include"
+        layout="@layout/activity_main_profile"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="@dimen/margin8dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imgAvatar" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
