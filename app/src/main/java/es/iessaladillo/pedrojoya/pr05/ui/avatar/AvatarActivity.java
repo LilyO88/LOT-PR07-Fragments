@@ -3,18 +3,12 @@ package es.iessaladillo.pedrojoya.pr05.ui.avatar;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
-import android.os.Parcelable;
-import android.os.PersistableBundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import java.util.ArrayList;
-import java.util.List;
-
-import androidx.annotation.NonNull;
 import androidx.annotation.VisibleForTesting;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.ActivityCompat;
@@ -28,11 +22,6 @@ public class AvatarActivity extends AppCompatActivity {
 
     @VisibleForTesting
     public static final String EXTRA_AVATAR = "EXTRA_AVATAR";
-
-/*    private ArrayList<ImageView> imagesList;
-    private ArrayList<TextView> namesList;*/
-
-    private static Avatar avatar;
 
     private AvatarActivityViewModel viewModel;
 
@@ -55,6 +44,11 @@ public class AvatarActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_avatar);
         viewModel = ViewModelProviders.of(this).get(AvatarActivityViewModel.class);
+        if (!viewModel.isNotFirstTime()) {
+            obtainData(getIntent());
+            viewModel.setNotFirstTime(true);
+        }
+
         obtainData(getIntent());
         initViews();
         setTransparent();
@@ -96,24 +90,9 @@ public class AvatarActivity extends AppCompatActivity {
         lblAvatar5 = ActivityCompat.requireViewById(this, R.id.lblAvatar5);
         lblAvatar6 = ActivityCompat.requireViewById(this, R.id.lblAvatar6);
 
-/*        imagesList.add(imgAvatar1);
-        imagesList.add(imgAvatar2);
-        imagesList.add(imgAvatar3);
-        imagesList.add(imgAvatar4);
-        imagesList.add(imgAvatar5);
-        imagesList.add(imgAvatar6);
-
-        namesList.add(lblAvatar1);
-        namesList.add(lblAvatar2);
-        namesList.add(lblAvatar3);
-        namesList.add(lblAvatar4);
-        namesList.add(lblAvatar5);
-        namesList.add(lblAvatar6);*/
-
         /*onClickListener*/
         View.OnClickListener clickListener = v -> {
             setAvatar(v);
-            viewModel.setAvatar(avatar);
             setTransparent();
         };
 
@@ -134,23 +113,23 @@ public class AvatarActivity extends AppCompatActivity {
 
     private void buildResult() {
         Intent intent = new Intent();
-        intent.putExtra(EXTRA_AVATAR, avatar);
+        intent.putExtra(EXTRA_AVATAR, viewModel.getAvatar());
         this.setResult(RESULT_OK, intent);
     }
 
     private void setTransparent() {
         deselectImageView();
-        if (avatar.getImageResId() == database.queryAvatar(1).getImageResId()) {
+        if (viewModel.getAvatar().getImageResId() == database.queryAvatar(1).getImageResId()) {
             selectImageView(imgAvatar1);
-        } else if (avatar.getImageResId() == database.queryAvatar(2).getImageResId()) {
+        } else if (viewModel.getAvatar().getImageResId() == database.queryAvatar(2).getImageResId()) {
             selectImageView(imgAvatar2);
-        } else if (avatar.getImageResId() == database.queryAvatar(3).getImageResId()) {
+        } else if (viewModel.getAvatar().getImageResId() == database.queryAvatar(3).getImageResId()) {
             selectImageView(imgAvatar3);
-        } else if (avatar.getImageResId() == database.queryAvatar(4).getImageResId()) {
+        } else if (viewModel.getAvatar().getImageResId() == database.queryAvatar(4).getImageResId()) {
             selectImageView(imgAvatar4);
-        } else if (avatar.getImageResId() == database.queryAvatar(5).getImageResId()) {
+        } else if (viewModel.getAvatar().getImageResId() == database.queryAvatar(5).getImageResId()) {
             selectImageView(imgAvatar5);
-        } else if (avatar.getImageResId() == database.queryAvatar(6).getImageResId()) {
+        } else if (viewModel.getAvatar().getImageResId() == database.queryAvatar(6).getImageResId()) {
             selectImageView(imgAvatar6);
         }
     }
@@ -158,12 +137,6 @@ public class AvatarActivity extends AppCompatActivity {
     private void setAvatar(View v) {
         Database database = Database.getInstance();
         long num = 0;
-
-/*        for(int i = 0 ; i < imagesList.size() ; i++) {
-            if(v.getId() == imagesList.get(i).getId() || v.getId() == namesList.get(i).getId()) {
-                avatar = database.queryAvatar(i);
-            }
-        }*/
 
         switch (v.getId()) {
             case R.id.imgAvatar1:
@@ -203,12 +176,12 @@ public class AvatarActivity extends AppCompatActivity {
                 num = 6;
                 break;
         }
-        avatar = database.queryAvatar(num);
+        viewModel.setAvatar(database.queryAvatar(num));
     }
 
     private void obtainData(Intent intent) {
         if (intent != null && intent.hasExtra(EXTRA_AVATAR) && viewModel.getAvatar() == null) { //OJO
-            avatar = intent.getParcelableExtra(EXTRA_AVATAR);
+            viewModel.setAvatar(intent.getParcelableExtra(EXTRA_AVATAR));
         }
     }
 

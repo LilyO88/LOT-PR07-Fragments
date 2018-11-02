@@ -23,7 +23,6 @@ import androidx.core.app.ActivityCompat;
 import androidx.lifecycle.ViewModelProviders;
 import es.iessaladillo.pedrojoya.pr05.R;
 import es.iessaladillo.pedrojoya.pr05.data.local.Database;
-import es.iessaladillo.pedrojoya.pr05.data.local.model.Avatar;
 import es.iessaladillo.pedrojoya.pr05.ui.avatar.AvatarActivity;
 import es.iessaladillo.pedrojoya.pr05.utils.KeyboardUtils;
 import es.iessaladillo.pedrojoya.pr05.utils.ValidationUtils;
@@ -50,8 +49,10 @@ public class MainActivity extends AppCompatActivity {
     private ImageView imgAddress;
     private ConstraintLayout constraitLayout;
 
+    private boolean[] fields;
+
     private static final int RC_AVATAR = 1;
-    private Avatar avatar;
+    private static final String IDENTIFIER = "IDENTIFIER";
 
     private MainActivityViewModel viewModel;
 
@@ -59,8 +60,32 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        initViews();
         viewModel = ViewModelProviders.of(this).get(MainActivityViewModel.class);
+        initViews();
+        if (savedInstanceState != null){
+            this.fields = savedInstanceState.getBooleanArray(IDENTIFIER);
+        }
+        validateFields(fields);
+    }
+
+    private void validateFields(boolean[] fields) {
+
+        lblName.setEnabled(fields[0]);
+        lblEmail.setEnabled(fields[1]);
+        lblPhonenumber.setEnabled(fields[2]);
+        lblAddress.setEnabled(fields[3]);
+        lblWeb.setEnabled(fields[4]);
+
+        imgEmail.setEnabled(fields[1]);
+        imgPhonenumber.setEnabled(fields[2]);
+        imgAddress.setEnabled(fields[3]);
+        imgWeb.setEnabled(fields[4]);
+    }
+
+    @Override
+    protected void onSaveInstanceState(Bundle outState) {
+        outState.putBooleanArray(IDENTIFIER, fields);
+        super.onSaveInstanceState(outState);
     }
 
     @Override
@@ -106,15 +131,10 @@ public class MainActivity extends AppCompatActivity {
         imgAddress = ActivityCompat.requireViewById(this, R.id.imgAddress);
         constraitLayout = ActivityCompat.requireViewById(this, R.id.clRoot);
 
-        imgAvatar.setImageResource(database.getDefaultAvatar().getImageResId());
+        viewModel.setDefaultAvatar();
+        setProfileAvatar();
 
-        View.OnClickListener avatarListener = v -> AvatarActivity.startForResult(MainActivity.this, RC_AVATAR, avatar);
-        /*if(viewModel.getAvatar() == null) {
-            avatar = database.queryAvatar(1);
-        } else {
-            avatar = viewModel.getAvatar();
-        }*/
-        avatar = database.getDefaultAvatar();
+        View.OnClickListener avatarListener = v -> AvatarActivity.startForResult(MainActivity.this, RC_AVATAR, viewModel.getAvatar());
 
         imgAvatar.setOnClickListener(avatarListener);
         lblAvatar.setOnClickListener(avatarListener);
@@ -150,6 +170,11 @@ public class MainActivity extends AppCompatActivity {
         imgPhonenumber.setOnClickListener(imgListener);
         imgAddress.setOnClickListener(imgListener);
         imgWeb.setOnClickListener(imgListener);
+
+        fields = new boolean[5];
+        for (int i=0; i < 5; i++){
+            fields[i] = true;
+        }
     }
 
     private void sendIntent(View v) {
@@ -180,24 +205,16 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void obtainResponseData(Intent intent) {
-        if (intent != null && intent.hasExtra(AvatarActivity.EXTRA_AVATAR) && viewModel.getAvatar() == null) {
-            avatar = intent.getParcelableExtra(AvatarActivity.EXTRA_AVATAR);
+        if (intent != null && intent.hasExtra(AvatarActivity.EXTRA_AVATAR)) {
+            viewModel.setAvatar(intent.getParcelableExtra(AvatarActivity.EXTRA_AVATAR));
         }
         setProfileAvatar();
-        saveStates();
     }
 
     private void setProfileAvatar() {
-        imgAvatar.setImageResource(avatar.getImageResId());
-        lblAvatar.setText(avatar.getName());
-
-        imgAvatar.setTag(avatar.getImageResId());
-        lblAvatar.setTag(avatar.getName());
-    }
-
-    //Save icons/labels states
-    private void saveStates() {
-        viewModel.setAvatar(avatar);
+        imgAvatar.setImageResource(viewModel.getAvatar().getImageResId());
+        lblAvatar.setText(viewModel.getAvatar().getName());
+        imgAvatar.setTag(viewModel.getAvatar().getImageResId());
     }
 
     //Implicit Intents
@@ -248,32 +265,40 @@ public class MainActivity extends AppCompatActivity {
     private void checkName() {
         if(!isValidName(txtName.getText().toString())) {
             disabledField(txtName, lblName);
+            fields[0] = false;
         } else {
             enabledField(txtName, lblName);
+            fields[0] = true;
         }
     }
 
     private void checkEmail() {
         if (!ValidationUtils.isValidEmail(txtEmail.getText().toString())) {
             disabledFieldImg(txtEmail, imgEmail, lblEmail);
+            fields[1] = false;
         } else {
             enabledFieldImg(txtEmail, imgEmail, lblEmail);
+            fields[1] = true;
         }
     }
 
     private void checkPhonenumber() {
         if (!ValidationUtils.isValidPhone(txtPhonenumber.getText().toString())) {
             disabledFieldImg(txtPhonenumber, imgPhonenumber, lblPhonenumber);
+            fields[2] = false;
         } else {
             enabledFieldImg(txtPhonenumber, imgPhonenumber, lblPhonenumber);
+            fields[2] = true;
         }
     }
 
     private void checkAddress() {
         if (!isValidAddress(txtAddress.getText().toString())) {
             disabledFieldImg(txtAddress, imgAddress, lblAddress);
+            fields[3] = false;
         } else {
             enabledFieldImg(txtAddress, imgAddress, lblAddress);
+            fields[3] = true;
         }
     }
 
@@ -281,8 +306,10 @@ public class MainActivity extends AppCompatActivity {
         if (!ValidationUtils.isValidUrl(txtWeb.getText().toString())
                 || TextUtils.isEmpty(txtWeb.getText().toString())) {
             disabledFieldImg(txtWeb, imgWeb, lblWeb);
+            fields[4] = false;
         } else {
             enabledFieldImg(txtWeb, imgWeb, lblWeb);
+            fields[0] = true;
         }
     }
 
@@ -350,5 +377,6 @@ public class MainActivity extends AppCompatActivity {
         editText.setError(null);
         textView.setEnabled(true);
     }
+
 
 }

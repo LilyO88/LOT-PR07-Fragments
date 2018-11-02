@@ -5,6 +5,7 @@ import android.widget.TextView;
 
 import androidx.lifecycle.ViewModel;
 import androidx.lifecycle.ViewModelProviders;
+import es.iessaladillo.pedrojoya.pr05.data.local.Database;
 import es.iessaladillo.pedrojoya.pr05.data.local.model.Avatar;
 
 public class MainActivityViewModel extends ViewModel {
@@ -19,6 +20,23 @@ public class MainActivityViewModel extends ViewModel {
     private ImageView imgPhonenumber;
     private ImageView imgAddress;
     private ImageView imgWeb;
+    private boolean firstInstance = true;
+
+    public Database getDatabase() {
+        if(database == null){
+            database = Database.getInstance();
+        }
+        return database;
+    }
+
+    public void setDefaultAvatar(){
+        if(firstInstance){
+            setAvatar(getDatabase().getDefaultAvatar());
+            firstInstance = false;
+        }
+    }
+
+    private Database database;
 
     public Avatar getAvatar() {
         return avatar;
