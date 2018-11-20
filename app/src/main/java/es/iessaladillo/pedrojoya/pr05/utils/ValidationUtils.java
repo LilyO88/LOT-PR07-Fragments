@@ -22,4 +22,15 @@ public class ValidationUtils {
         return !TextUtils.isEmpty(url) && Patterns.WEB_URL.matcher(url).matches();
     }
 
+    //Modifications
+
+    public static boolean isValidName(String name) {
+        return !TextUtils.isEmpty(name);
+    }
+
+    public static boolean isValidAddress(String address) {
+        return !TextUtils.isEmpty(address);
+    }
+
+
 }

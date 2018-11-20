@@ -49,10 +49,7 @@ public class MainActivity extends AppCompatActivity {
     private ImageView imgAddress;
     private ConstraintLayout constraitLayout;
 
-    private boolean[] fields;
-
     private static final int RC_AVATAR = 1;
-    private static final String IDENTIFIER = "IDENTIFIER";
 
     private MainActivityViewModel viewModel;
 
@@ -62,30 +59,20 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         viewModel = ViewModelProviders.of(this).get(MainActivityViewModel.class);
         initViews();
-        if (savedInstanceState != null){
-            this.fields = savedInstanceState.getBooleanArray(IDENTIFIER);
-        }
-        validateFields(fields);
+        validateFields();
     }
 
-    private void validateFields(boolean[] fields) {
+    private void validateFields() {
+        lblName.setEnabled(viewModel.isStateName());
+        lblEmail.setEnabled(viewModel.isStateEmail());
+        lblPhonenumber.setEnabled(viewModel.isStatePhonenumber());
+        lblAddress.setEnabled(viewModel.isStateAddress());
+        lblWeb.setEnabled(viewModel.isStateWeb());
 
-        lblName.setEnabled(fields[0]);
-        lblEmail.setEnabled(fields[1]);
-        lblPhonenumber.setEnabled(fields[2]);
-        lblAddress.setEnabled(fields[3]);
-        lblWeb.setEnabled(fields[4]);
-
-        imgEmail.setEnabled(fields[1]);
-        imgPhonenumber.setEnabled(fields[2]);
-        imgAddress.setEnabled(fields[3]);
-        imgWeb.setEnabled(fields[4]);
-    }
-
-    @Override
-    protected void onSaveInstanceState(Bundle outState) {
-        outState.putBooleanArray(IDENTIFIER, fields);
-        super.onSaveInstanceState(outState);
+        imgEmail.setEnabled(viewModel.isStateImgEmail());
+        imgPhonenumber.setEnabled(viewModel.isStateImgPhonenumber());
+        imgAddress.setEnabled(viewModel.isStateImgAddress());
+        imgWeb.setEnabled(viewModel.isStateImgWeb());
     }
 
     @Override
@@ -138,6 +125,7 @@ public class MainActivity extends AppCompatActivity {
 
         imgAvatar.setOnClickListener(avatarListener);
         lblAvatar.setOnClickListener(avatarListener);
+
         txtName.setOnFocusChangeListener((v, hasFocus) -> setBold(txtName, lblName));
         txtEmail.setOnFocusChangeListener((v, hasFocus) -> setBold(txtEmail, lblEmail));
         txtPhonenumber.setOnFocusChangeListener((v, hasFocus) -> setBold(txtPhonenumber, lblPhonenumber));
@@ -170,11 +158,6 @@ public class MainActivity extends AppCompatActivity {
         imgPhonenumber.setOnClickListener(imgListener);
         imgAddress.setOnClickListener(imgListener);
         imgWeb.setOnClickListener(imgListener);
-
-        fields = new boolean[5];
-        for (int i=0; i < 5; i++){
-            fields[i] = true;
-        }
     }
 
     private void sendIntent(View v) {
@@ -263,54 +246,23 @@ public class MainActivity extends AppCompatActivity {
 
     //Validation to enable/disable icons/labels
     private void checkName() {
-        if(!isValidName(txtName.getText().toString())) {
-            disabledField(txtName, lblName);
-            fields[0] = false;
-        } else {
-            enabledField(txtName, lblName);
-            fields[0] = true;
-        }
+        enabledDisabledField(txtName, lblName, ValidationUtils.isValidName(txtName.getText().toString()));
     }
 
     private void checkEmail() {
-        if (!ValidationUtils.isValidEmail(txtEmail.getText().toString())) {
-            disabledFieldImg(txtEmail, imgEmail, lblEmail);
-            fields[1] = false;
-        } else {
-            enabledFieldImg(txtEmail, imgEmail, lblEmail);
-            fields[1] = true;
-        }
+        enabledDisabledFieldImg(txtEmail, imgEmail, lblEmail, ValidationUtils.isValidEmail(txtEmail.getText().toString()));
     }
 
     private void checkPhonenumber() {
-        if (!ValidationUtils.isValidPhone(txtPhonenumber.getText().toString())) {
-            disabledFieldImg(txtPhonenumber, imgPhonenumber, lblPhonenumber);
-            fields[2] = false;
-        } else {
-            enabledFieldImg(txtPhonenumber, imgPhonenumber, lblPhonenumber);
-            fields[2] = true;
-        }
+        enabledDisabledFieldImg(txtPhonenumber, imgPhonenumber, lblPhonenumber, ValidationUtils.isValidPhone(txtPhonenumber.getText().toString()));
     }
 
     private void checkAddress() {
-        if (!isValidAddress(txtAddress.getText().toString())) {
-            disabledFieldImg(txtAddress, imgAddress, lblAddress);
-            fields[3] = false;
-        } else {
-            enabledFieldImg(txtAddress, imgAddress, lblAddress);
-            fields[3] = true;
-        }
+        enabledDisabledFieldImg(txtAddress, imgAddress, lblAddress, ValidationUtils.isValidAddress(txtAddress.getText().toString()));
     }
 
     private void checkWeb() {
-        if (!ValidationUtils.isValidUrl(txtWeb.getText().toString())
-                || TextUtils.isEmpty(txtWeb.getText().toString())) {
-            disabledFieldImg(txtWeb, imgWeb, lblWeb);
-            fields[4] = false;
-        } else {
-            enabledFieldImg(txtWeb, imgWeb, lblWeb);
-            fields[0] = true;
-        }
+        enabledDisabledFieldImg(txtWeb, imgWeb, lblWeb, ValidationUtils.isValidUrl(txtWeb.getText().toString()));
     }
 
     private void checkCurrentView() {
@@ -348,35 +300,42 @@ public class MainActivity extends AppCompatActivity {
         return true;
     }
 
-    private boolean isValidName(String name) {
-        return !TextUtils.isEmpty(name);
+    private void enabledDisabledFieldImg(EditText editText, ImageView imageView, TextView textView, boolean valid) {
+        if(valid) {
+            editText.setError(null);
+        } else {
+            editText.setError(getString(R.string.main_invalid_data));
+        }
+        imageView.setEnabled(valid);
+        textView.setEnabled(valid);
+        selectStateView(textView, valid);
     }
 
-    private boolean isValidAddress(String address) {
-        return !TextUtils.isEmpty(address);
+    private void enabledDisabledField(EditText editText, TextView textView, boolean valid) {
+        if(valid) {
+            editText.setError(null);
+        } else {
+            editText.setError(getString(R.string.main_invalid_data));
+        }
+        textView.setEnabled(valid);
+        selectStateView(textView, valid);
     }
 
-    private void disabledFieldImg(EditText editText, ImageView imageView, TextView textView) {
-        editText.setError(getString(R.string.main_invalid_data));
-        imageView.setEnabled(false);
-        textView.setEnabled(false);
+    private void selectStateView(View view, boolean state) {
+        if(view == lblName) {
+            viewModel.setStateName(state);
+        } else if(view == lblEmail) {
+            viewModel.setStateEmail(state);
+            viewModel.setStateImgEmail(state);
+        } else if(view == lblPhonenumber) {
+            viewModel.setStatePhonenumber(state);
+            viewModel.setStateImgPhonenumber(state);
+        } else if(view == lblAddress) {
+            viewModel.setStateAddress(state);
+            viewModel.setStateImgAddress(state);
+        } else if(view == lblWeb) {
+            viewModel.setStateWeb(state);
+            viewModel.setStateImgWeb(state);
+        }
     }
-
-    private void enabledFieldImg(EditText editText, ImageView imageView, TextView textView) {
-        editText.setError(null);
-        imageView.setEnabled(true);
-        textView.setEnabled(true);
-    }
-
-    private void disabledField(EditText editText, TextView textView) {
-        editText.setError(getString(R.string.main_invalid_data));
-        textView.setEnabled(false);
-    }
-
-    private void enabledField(EditText editText, TextView textView) {
-        editText.setError(null);
-        textView.setEnabled(true);
-    }
-
-
 }
