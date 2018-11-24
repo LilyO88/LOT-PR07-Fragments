@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Profile</string>
+    <string name="app_name">Profile RecyclerViez</string>
     <string name="avatar_label">Select Avatar</string>
     <string name="main_invalid_data">Invalid data</string>
     <string name="main_save">Save</string>
@@ -40,4 +40,10 @@
     <string name="avatar_thirdAvatarImageDescription">Third avatar image</string>
     <string name="avatar_secondAvatarImageDescription">Second avatar image</string>
     <string name="avatar_firstAvatarImageDescription">First avatar image</string>
+
+
+    <string name="main_no_students_yet">No users yet</string>
+    <string name="main_lblEdit">EDIT</string>
+    <string name="main_lblDelete">DELETE</string>
+    <string name="card_imageViewAvatar">Avatar image\'s user</string>
 </resources>

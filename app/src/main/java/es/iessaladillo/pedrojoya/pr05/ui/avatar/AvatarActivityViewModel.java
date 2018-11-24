@@ -6,7 +6,6 @@ import es.iessaladillo.pedrojoya.pr05.data.local.model.Avatar;
 public class AvatarActivityViewModel extends ViewModel {
 
     private Avatar avatar;
-    private boolean isNotFirstTime = false;
 
     public Avatar getAvatar() {
         return avatar;
@@ -16,11 +15,4 @@ public class AvatarActivityViewModel extends ViewModel {
         this.avatar = avatar;
     }
 
-    public boolean isNotFirstTime() {
-        return isNotFirstTime;
-    }
-
-    public void setNotFirstTime(boolean notFirstTime) {
-        isNotFirstTime = notFirstTime;
-    }
 }

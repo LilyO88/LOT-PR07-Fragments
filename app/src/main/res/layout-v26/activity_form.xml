@@ -1,0 +1,203 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/clForm"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:paddingBottom="@dimen/general_activity_margin">
+
+        <TextView
+            android:id="@+id/lblName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/margin16dp"
+            android:layout_marginTop="@dimen/margin8dp"
+            android:selectAllOnFocus="true"
+            android:text="@string/txtName"
+            android:textColor="@color/color_state_selector"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+
+        <EditText
+            android:id="@+id/txtName"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/margin16dp"
+            android:layout_marginEnd="@dimen/margin16dp"
+            android:ems="10"
+            android:hint="@string/nameHint"
+            android:imeOptions="actionNext"
+            android:importantForAutofill="no"
+            android:inputType="textPersonName"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/lblName"
+            tools:textSize="14sp">
+
+            <requestFocus />
+        </EditText>
+
+        <TextView
+            android:id="@+id/lblEmail"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/margin16dp"
+            android:text="@string/textEmail"
+            android:textColor="@color/color_state_selector"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/lblPhonenumber" />
+
+        <EditText
+            android:id="@+id/txtEmail"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/margin16dp"
+            android:layout_marginEnd="@dimen/margin8dp"
+            android:ems="10"
+            android:hint="@string/emailHint"
+            android:imeOptions="actionNext"
+            android:importantForAutofill="no"
+            android:inputType="textEmailAddress"
+            android:nextFocusForward="@id/txtPhonenumber"
+            app:layout_constraintEnd_toStartOf="@+id/imgEmail"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/lblEmail" />
+
+        <ImageView
+            android:id="@+id/imgEmail"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/margin8dp"
+            android:layout_marginBottom="@dimen/margin8dp"
+            android:contentDescription="@string/imgEmailDescription"
+            android:tint="@color/color_state_selector"
+            app:layout_constraintBottom_toBottomOf="@+id/txtEmail"
+            app:layout_constraintEnd_toStartOf="@+id/txtPhonenumber"
+            app:srcCompat="@drawable/ic_email_24dp" />
+
+        <TextView
+            android:id="@+id/lblPhonenumber"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin8dp"
+            android:text="@string/textPhonenumber"
+            android:textColor="@color/color_state_selector"
+            app:layout_constraintStart_toStartOf="@+id/txtPhonenumber"
+            app:layout_constraintTop_toBottomOf="@+id/txtName" />
+
+        <EditText
+            android:id="@+id/txtPhonenumber"
+            android:layout_width="99dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/margin8dp"
+            android:ems="10"
+            android:hint="@string/phoneHint"
+            android:imeOptions="actionNext"
+            android:inputType="phone"
+            android:maxLength="11"
+            app:layout_constraintEnd_toStartOf="@+id/imgPhonenumber"
+            app:layout_constraintTop_toBottomOf="@+id/lblPhonenumber"
+            android:nextFocusForward="@id/txtAddress"
+            android:importantForAutofill="no" />
+
+        <TextView
+            android:id="@+id/lblAddress"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/margin16dp"
+            android:layout_marginTop="@dimen/margin8dp"
+            android:text="@string/textAddress"
+            android:textColor="@color/color_state_selector"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/txtEmail" />
+
+        <ImageView
+            android:id="@+id/imgPhonenumber"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/margin16dp"
+            android:layout_marginBottom="@dimen/margin8dp"
+            android:contentDescription="@string/imgPhoneDescription"
+            android:tint="@color/color_state_selector"
+            app:layout_constraintBottom_toBottomOf="@+id/txtPhonenumber"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:srcCompat="@drawable/ic_call_24dp" />
+
+        <EditText
+            android:id="@+id/txtAddress"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/margin16dp"
+            android:layout_marginEnd="@dimen/margin8dp"
+            android:ems="10"
+            android:hint="@string/addressHint"
+            android:imeOptions="actionNext"
+            android:importantForAutofill="no"
+            android:inputType="textPostalAddress"
+            android:nextFocusForward="@id/txtWeb"
+            app:layout_constraintEnd_toStartOf="@+id/imgAddress"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/lblAddress" />
+
+        <ImageView
+            android:id="@+id/imgAddress"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/margin16dp"
+            android:layout_marginBottom="@dimen/margin8dp"
+            android:contentDescription="@string/imgAddressDescription"
+            android:tint="@color/color_state_selector"
+            app:layout_constraintBottom_toBottomOf="@+id/txtAddress"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:srcCompat="@drawable/ic_map_24dp" />
+
+        <TextView
+            android:id="@+id/lblWeb"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/margin16dp"
+            android:layout_marginTop="@dimen/margin8dp"
+            android:text="@string/textWeb"
+            android:textColor="@color/color_state_selector"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/txtAddress" />
+
+        <EditText
+            android:id="@+id/txtWeb"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/margin16dp"
+            android:layout_marginEnd="@dimen/margin8dp"
+            android:ems="10"
+            android:hint="@string/webHint"
+            android:imeOptions="actionDone"
+            android:importantForAutofill="no"
+            android:inputType="textWebEditText"
+            android:singleLine="true"
+            app:layout_constraintEnd_toStartOf="@+id/imgWeb"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/lblWeb" />
+
+        <ImageView
+            android:id="@+id/imgWeb"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/margin16dp"
+            android:layout_marginBottom="@dimen/margin8dp"
+            android:contentDescription="@string/imgWebDescription"
+            android:tint="@color/color_state_selector"
+            app:layout_constraintBottom_toBottomOf="@+id/txtWeb"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:srcCompat="@drawable/ic_web_24dp" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
