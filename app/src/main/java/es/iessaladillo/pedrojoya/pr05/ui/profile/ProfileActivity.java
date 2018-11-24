@@ -111,7 +111,6 @@ public class ProfileActivity extends AppCompatActivity {
         return super.onOptionsItemSelected(item);
     }
 
-    //TODO: Implements save()
     private void save() {
         if (!validateAll()) {
             Snackbar.make(constraitLayout, R.string.main_error_saving, Snackbar.LENGTH_LONG).show();
@@ -196,12 +195,12 @@ public class ProfileActivity extends AppCompatActivity {
     }
 
     //Intent del Main a Profile
-    public static void startForResult(Activity actividad, int requestCode, User user) {
-        Intent intent = new Intent(actividad, ProfileActivity.class);
+    public static void startForResult(Activity activity, int requestCode, User user) {
+        Intent intent = new Intent(activity, ProfileActivity.class);
         if(user != null) {
             intent.putExtra(EXTRA_USER, user);
         }
-        actividad.startActivityForResult(intent, requestCode);
+        activity.startActivityForResult(intent, requestCode);
     }
 
     private void getIntentData(Intent intent) {
@@ -220,6 +219,7 @@ public class ProfileActivity extends AppCompatActivity {
     }
 
     private void asignUser() {
+        //Edit
         if(user != null) {
             user.setName(txtName.getText().toString());
             user.setEmail(txtEmail.getText().toString());
@@ -227,7 +227,7 @@ public class ProfileActivity extends AppCompatActivity {
             user.setAddress(txtAddress.getText().toString());
             user.setWeb(txtWeb.getText().toString());
             user.setAvatar(viewModel.getAvatar());
-        } else {
+        } else { //Add
             user = new User();
             user.setName(txtName.getText().toString());
             user.setEmail(txtEmail.getText().toString());

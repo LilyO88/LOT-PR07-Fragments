@@ -16,34 +16,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="dc5c2b8a-d31b-4b4d-961c-538484338a57" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/caches/build_file_checksums.ser" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/caches/build_file_checksums.ser" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_appcompat_appcompat_1_0_0.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_core_core_1_0_0.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_test_core_1_0_0_beta02.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_test_ext_junit_1_0_0_beta02.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_vectordrawable_vectordrawable_1_0_0.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/app.iml" beforeDir="false" afterPath="$PROJECT_DIR$/app/app.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/app/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/androidTest/java/es/iessaladillo/pedrojoya/pr05/ui/main/MainActivityIntentTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/androidTest/java/es/iessaladillo/pedrojoya/pr05/ui/profile/ProfileActivityIntentTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/androidTest/java/es/iessaladillo/pedrojoya/pr05/ui/main/MainActivityRotationTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/androidTest/java/es/iessaladillo/pedrojoya/pr05/ui/profile/ProfileActivityRotationTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/androidTest/java/es/iessaladillo/pedrojoya/pr05/ui/main/MainActivityTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/androidTest/java/es/iessaladillo/pedrojoya/pr05/ui/profile/ProfileActivityTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/es/iessaladillo/pedrojoya/pr05/data/local/Database.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/es/iessaladillo/pedrojoya/pr05/data/local/Database.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/es/iessaladillo/pedrojoya/pr05/ui/avatar/AvatarActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/es/iessaladillo/pedrojoya/pr05/ui/avatar/AvatarActivity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/es/iessaladillo/pedrojoya/pr05/ui/avatar/AvatarActivityViewModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/es/iessaladillo/pedrojoya/pr05/ui/avatar/AvatarActivityViewModel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/es/iessaladillo/pedrojoya/pr05/ui/main/MainActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/es/iessaladillo/pedrojoya/pr05/ui/profile/ProfileActivity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/es/iessaladillo/pedrojoya/pr05/ui/main/MainActivityViewModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/es/iessaladillo/pedrojoya/pr05/ui/profile/ProfileActivityViewModel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout-land/activity_avatar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout-land/activity_avatar.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout-land/activity_main.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout-land/activity_profile.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_avatar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_avatar.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_main.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_profile.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_main_profile.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_form.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/values/avatars.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/values/avatars.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/values/colors.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/values/colors.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/values/dimens.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/values/dimens.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/values/integers.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/values/integers.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/values/strings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/values/strings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/es/iessaladillo/pedrojoya/pr05/ui/main/MainActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/es/iessaladillo/pedrojoya/pr05/ui/main/MainActivity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/es/iessaladillo/pedrojoya/pr05/ui/profile/ProfileActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/es/iessaladillo/pedrojoya/pr05/ui/profile/ProfileActivity.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -66,18 +40,34 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="activity_main_item.xml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_main_item.xml">
+      <file leaf-file-name="ProfileActivity.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/es/iessaladillo/pedrojoya/pr05/ui/profile/ProfileActivity.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="89">
-              <caret line="54" column="61" selection-start-line="54" selection-start-column="61" selection-end-line="54" selection-end-column="61" />
-              <folding>
-                <element signature="e#3774#3798#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="1479">
+              <caret line="113" selection-start-line="113" selection-end-line="113" />
             </state>
           </provider>
-          <provider editor-type-id="android-designer2">
-            <state />
+        </entry>
+      </file>
+      <file leaf-file-name="Database.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/es/iessaladillo/pedrojoya/pr05/data/local/Database.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="507">
+              <caret line="115" selection-start-line="115" selection-end-line="115" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="MainActivity.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/es/iessaladillo/pedrojoya/pr05/ui/main/MainActivity.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="447">
+              <caret line="76" lean-forward="true" selection-start-line="76" selection-end-line="76" />
+              <folding>
+                <element signature="e#2337#2338#0" expanded="true" />
+                <element signature="e#2416#2417#0" expanded="true" />
+              </folding>
+            </state>
           </provider>
         </entry>
       </file>
@@ -86,90 +76,6 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="413">
               <caret line="80" column="82" selection-start-line="80" selection-start-column="82" selection-end-line="80" selection-end-column="82" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="MainActivityViewModelFactory.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/java/es/iessaladillo/pedrojoya/pr05/ui/main/MainActivityViewModelFactory.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="221">
-              <caret line="18" column="15" selection-start-line="18" selection-start-column="15" selection-end-line="18" selection-end-column="15" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="MainActivity.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/java/es/iessaladillo/pedrojoya/pr05/ui/main/MainActivity.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="124">
-              <caret line="26" column="27" selection-start-line="26" selection-start-column="27" selection-end-line="26" selection-end-column="27" />
-              <folding>
-                <element signature="e#1625#1626#0" expanded="true" />
-                <element signature="e#1660#1661#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ProfileActivityViewModel.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/app/src/main/java/es/iessaladillo/pedrojoya/pr05/ui/profile/ProfileActivityViewModel.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="149">
-              <caret line="146" column="21" selection-start-line="146" selection-start-column="21" selection-end-line="146" selection-end-column="21" />
-              <folding>
-                <element signature="e#3645#3646#0" expanded="true" />
-                <element signature="e#3678#3679#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Avatar.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/java/es/iessaladillo/pedrojoya/pr05/data/local/model/Avatar.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="73">
-              <caret line="47" column="14" selection-start-line="47" selection-start-column="14" selection-end-line="47" selection-end-column="14" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="activity_form.xml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_form.xml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="131">
-              <caret line="38" column="12" selection-start-line="38" selection-start-column="12" selection-end-line="38" selection-end-column="12" />
-            </state>
-          </provider>
-          <provider editor-type-id="android-designer2">
-            <state />
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="activity_form.xml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/res/layout-v26/activity_form.xml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-816" />
-          </provider>
-          <provider editor-type-id="android-designer2">
-            <state />
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="avatars.xml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/res/values/avatars.xml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="51">
-              <caret line="3" column="12" selection-start-line="3" selection-start-column="12" selection-end-line="3" selection-end-column="12" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="colors.xml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/res/values/colors.xml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="102">
-              <caret line="6" column="11" selection-start-line="6" selection-start-column="11" selection-end-line="6" selection-end-column="11" />
             </state>
           </provider>
         </entry>
@@ -2524,13 +2430,13 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/app/src/main/java/es/iessaladillo/pedrojoya/pr05/data/local/model/User.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/es/iessaladillo/pedrojoya/pr05/ui/profile/ProfileActivity.java" />
         <option value="$PROJECT_DIR$/app/src/main/res/values/strings.xml" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_form.xml" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_main_item.xml" />
         <option value="$PROJECT_DIR$/app/src/main/java/es/iessaladillo/pedrojoya/pr05/ui/main/MainActivityAdapter.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/es/iessaladillo/pedrojoya/pr05/data/local/model/Avatar.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/es/iessaladillo/pedrojoya/pr05/ui/main/MainActivity.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/es/iessaladillo/pedrojoya/pr05/ui/profile/ProfileActivity.java" />
       </list>
     </option>
   </component>
@@ -2603,11 +2509,6 @@
             <path>
               <item name="LOT-PR06-RecyclerView" type="1abcf292:AndroidViewProjectNode" />
               <item name="app" type="feadf853:AndroidModuleNode" />
-              <item name="manifests" type="f94875db:AndroidManifestsGroupNode" />
-            </path>
-            <path>
-              <item name="LOT-PR06-RecyclerView" type="1abcf292:AndroidViewProjectNode" />
-              <item name="app" type="feadf853:AndroidModuleNode" />
               <item name="java" type="edd41e36:AndroidSourceTypeNode" />
             </path>
             <path>
@@ -2621,32 +2522,23 @@
               <item name="app" type="feadf853:AndroidModuleNode" />
               <item name="java" type="edd41e36:AndroidSourceTypeNode" />
               <item name="pr05" type="cbb59c9e:AndroidPsiDirectoryNode" />
-              <item name="local" type="462c0819:PsiDirectoryNode" />
+              <item name="ui" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="LOT-PR06-RecyclerView" type="1abcf292:AndroidViewProjectNode" />
               <item name="app" type="feadf853:AndroidModuleNode" />
               <item name="java" type="edd41e36:AndroidSourceTypeNode" />
               <item name="pr05" type="cbb59c9e:AndroidPsiDirectoryNode" />
-              <item name="local" type="462c0819:PsiDirectoryNode" />
-              <item name="model" type="462c0819:PsiDirectoryNode" />
+              <item name="ui" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="LOT-PR06-RecyclerView" type="1abcf292:AndroidViewProjectNode" />
               <item name="app" type="feadf853:AndroidModuleNode" />
-              <item name="res" type="d4f16f75:AndroidResFolderNode" />
-            </path>
-            <path>
-              <item name="LOT-PR06-RecyclerView" type="1abcf292:AndroidViewProjectNode" />
-              <item name="app" type="feadf853:AndroidModuleNode" />
-              <item name="res" type="d4f16f75:AndroidResFolderNode" />
-              <item name="layout" type="ddeffd01:AndroidResFolderTypeNode" />
-            </path>
-            <path>
-              <item name="LOT-PR06-RecyclerView" type="1abcf292:AndroidViewProjectNode" />
-              <item name="app" type="feadf853:AndroidModuleNode" />
-              <item name="res" type="d4f16f75:AndroidResFolderNode" />
-              <item name="values" type="ddeffd01:AndroidResFolderTypeNode" />
+              <item name="java" type="edd41e36:AndroidSourceTypeNode" />
+              <item name="pr05" type="cbb59c9e:AndroidPsiDirectoryNode" />
+              <item name="ui" type="462c0819:PsiDirectoryNode" />
+              <item name="profile" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -2797,7 +2689,7 @@
       <window_info id="Capture Tool" />
       <window_info id="Designer" />
       <window_info anchor="bottom" id="Build" weight="0.32909605" />
-      <window_info active="true" anchor="bottom" id="Inspection Results" visible="true" weight="0.32909605" />
+      <window_info anchor="bottom" id="Inspection Results" weight="0.32909605" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.3997175" />
       <window_info anchor="right" id="Device File Explorer" side_tool="true" />
@@ -2810,7 +2702,7 @@
       <window_info anchor="bottom" id="Version Control" weight="0.32909605" />
       <window_info anchor="bottom" id="Terminal" weight="0.32909605" />
       <window_info id="Captures" order="2" weight="0.25" />
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.21275167" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.21275167" />
       <window_info anchor="bottom" id="Find" order="1" />
       <window_info anchor="right" id="Gradle" />
       <window_info anchor="right" id="Theme Preview" />
@@ -2859,32 +2751,6 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/app/src/main/java/es/iessaladillo/pedrojoya/pr05/ui/main/MainActivity.java</url>
-          <line>58</line>
-          <properties />
-          <option name="timeStamp" value="12" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/app/src/main/java/es/iessaladillo/pedrojoya/pr05/ui/main/MainActivity.java</url>
-          <line>59</line>
-          <properties />
-          <option name="timeStamp" value="13" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/app/src/main/java/es/iessaladillo/pedrojoya/pr05/ui/main/MainActivity.java</url>
-          <line>63</line>
-          <properties />
-          <option name="timeStamp" value="14" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/app/src/main/java/es/iessaladillo/pedrojoya/pr05/ui/main/MainActivity.java</url>
-          <line>85</line>
-          <properties />
-          <option name="timeStamp" value="15" />
-        </line-breakpoint>
-      </breakpoints>
       <option name="time" value="18" />
     </breakpoint-manager>
   </component>
@@ -2987,33 +2853,6 @@
         <state />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/es/iessaladillo/pedrojoya/pr05/ui/profile/ProfileActivity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="221">
-          <caret line="234" column="30" selection-start-line="234" selection-start-column="30" selection-end-line="234" selection-end-column="30" />
-          <folding>
-            <element signature="e#1306#1339#0" expanded="true" />
-            <element signature="e#3019#3586#0" />
-            <element signature="e#3592#3770#0" />
-            <element signature="e#3776#4002#0" />
-            <element signature="e#4008#4318#0" />
-            <element signature="e#4103#4129#0" expanded="true" />
-            <element signature="e#4294#7485#0" />
-            <element signature="e#7491#7849#0" />
-            <element signature="e#9026#9298#0" />
-            <element signature="e#9304#9558#0" />
-            <element signature="e#9564#9823#0" />
-            <element signature="e#9859#10098#0" />
-            <element signature="e#10104#10366#0" />
-            <element signature="e#10372#10612#0" />
-            <element signature="e#10618#10876#0" />
-            <element signature="e#10882#11182#0" />
-            <element signature="e#13836#13873#0" expanded="true" />
-            <element signature="e#14205#14242#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/res/values/strings.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="799">
@@ -3040,17 +2879,6 @@
       </provider>
       <provider editor-type-id="android-designer2">
         <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/es/iessaladillo/pedrojoya/pr05/data/local/Database.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="115" selection-start-line="115" selection-end-line="115" />
-          <folding>
-            <element signature="e#3097#3098#0" expanded="true" />
-            <element signature="e#3133#3134#0" expanded="true" />
-          </folding>
-        </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_form.xml">
@@ -3098,13 +2926,6 @@
         <state />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/es/iessaladillo/pedrojoya/pr05/ui/main/MainActivityAdapter.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="413">
-          <caret line="80" column="82" selection-start-line="80" selection-start-column="82" selection-end-line="80" selection-end-column="82" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/es/iessaladillo/pedrojoya/pr05/ui/main/MainActivityViewModelFactory.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="221">
@@ -3114,30 +2935,51 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/es/iessaladillo/pedrojoya/pr05/data/local/model/Avatar.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="73">
+        <state relative-caret-position="283">
           <caret line="47" column="14" selection-start-line="47" selection-start-column="14" selection-end-line="47" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/es/iessaladillo/pedrojoya/pr05/ui/main/MainActivity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="124">
-          <caret line="26" column="27" selection-start-line="26" selection-start-column="27" selection-end-line="26" selection-end-column="27" />
-          <folding>
-            <element signature="e#1625#1626#0" expanded="true" />
-            <element signature="e#1660#1661#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/es/iessaladillo/pedrojoya/pr05/ui/profile/ProfileActivityViewModel.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="149">
+        <state relative-caret-position="1456">
           <caret line="146" column="21" selection-start-line="146" selection-start-column="21" selection-end-line="146" selection-end-column="21" />
           <folding>
             <element signature="e#3645#3646#0" expanded="true" />
             <element signature="e#3678#3679#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/es/iessaladillo/pedrojoya/pr05/data/local/Database.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="507">
+          <caret line="115" selection-start-line="115" selection-end-line="115" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/es/iessaladillo/pedrojoya/pr05/ui/main/MainActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="447">
+          <caret line="76" lean-forward="true" selection-start-line="76" selection-end-line="76" />
+          <folding>
+            <element signature="e#2337#2338#0" expanded="true" />
+            <element signature="e#2416#2417#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/es/iessaladillo/pedrojoya/pr05/ui/main/MainActivityAdapter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="413">
+          <caret line="80" column="82" selection-start-line="80" selection-start-column="82" selection-end-line="80" selection-end-column="82" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/es/iessaladillo/pedrojoya/pr05/ui/profile/ProfileActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1479">
+          <caret line="113" selection-start-line="113" selection-end-line="113" />
         </state>
       </provider>
     </entry>

@@ -61,7 +61,6 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void addUser() {
-//        ProfileActivity.startForResult(MainActivity.this, RC_ADD, new User("", "", "", "", "", database.getDefaultAvatar()));
         ProfileActivity.startForResult(MainActivity.this, RC_ADD, null);
     }
 
