@@ -168,6 +168,7 @@ public class AvatarActivity extends AppCompatActivity {
         b.imgAvatar6.setAlpha(ResourcesUtils.getFloat(this, R.dimen.avatar_not_selected_image_alpha));
     }
 
+    //Intent Profile - Avatar
     public static void startForResult(Activity activity, int requestCode, Avatar avatar) {
         Intent intent = new Intent(activity, AvatarActivity.class);
         intent.putExtra(EXTRA_AVATAR, avatar);
@@ -185,5 +186,6 @@ public class AvatarActivity extends AppCompatActivity {
         intent.putExtra(EXTRA_AVATAR, viewModel.getAvatar());
         this.setResult(RESULT_OK, intent);
     }
+    //Intent Profile - Avatar
 
 }

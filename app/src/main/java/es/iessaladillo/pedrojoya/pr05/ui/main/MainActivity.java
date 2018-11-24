@@ -54,6 +54,7 @@ public class MainActivity extends AppCompatActivity {
 
         b.mainLstUsers.setAdapter(listAdapter);
 
+        //Add listener
         View.OnClickListener listener = v -> addUser();
 
         b.mainFab.setOnClickListener(listener);
@@ -68,6 +69,7 @@ public class MainActivity extends AppCompatActivity {
         ProfileActivity.startForResult(MainActivity.this, RC_EDIT, user);
     }
 
+    //Intent Main -Profile
     @Override
     protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
         if(resultCode == RESULT_OK && (requestCode == RC_EDIT || requestCode == RC_ADD)) {

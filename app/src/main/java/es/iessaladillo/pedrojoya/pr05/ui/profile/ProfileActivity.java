@@ -143,17 +143,20 @@ public class ProfileActivity extends AppCompatActivity {
         viewModel.setDefaultAvatar();
         setProfileAvatar();
 
+        //Avatar image listener
         View.OnClickListener avatarListener = v -> AvatarActivity.startForResult(ProfileActivity.this, RC_AVATAR, viewModel.getAvatar());
 
         imgAvatar.setOnClickListener(avatarListener);
         lblAvatar.setOnClickListener(avatarListener);
 
+        //Label is bold when editText has focus
         txtName.setOnFocusChangeListener((v, hasFocus) -> setBold(txtName, lblName));
         txtEmail.setOnFocusChangeListener((v, hasFocus) -> setBold(txtEmail, lblEmail));
         txtPhonenumber.setOnFocusChangeListener((v, hasFocus) -> setBold(txtPhonenumber, lblPhonenumber));
         txtAddress.setOnFocusChangeListener((v, hasFocus) -> setBold(txtAddress, lblAddress));
         txtWeb.setOnFocusChangeListener((v, hasFocus) -> setBold(txtWeb, lblWeb));
 
+        //SetTag
         imgPhonenumber.setTag(R.drawable.ic_call_24dp);
         imgEmail.setTag(R.drawable.ic_email_24dp);
         imgWeb.setTag(R.drawable.ic_web_24dp);
@@ -161,6 +164,7 @@ public class ProfileActivity extends AppCompatActivity {
         imgAvatar.setTag(database.getDefaultAvatar().getImageResId());
         lblAvatar.setTag(database.getDefaultAvatar().getName());
 
+        //TextWatcher, check fields
         GestorTextWatcher gestorTextWatcher = new GestorTextWatcher();
 
         txtName.addTextChangedListener(gestorTextWatcher);
@@ -169,11 +173,13 @@ public class ProfileActivity extends AppCompatActivity {
         txtAddress.addTextChangedListener(gestorTextWatcher);
         txtWeb.addTextChangedListener(gestorTextWatcher);
 
+        //Keuboard editorAction
         txtWeb.setOnEditorActionListener((v, actionId, event) -> {
             save();
             return false;
         });
 
+        //Icons listener, send implicit intent
         View.OnClickListener imgListener = this::sendIntent;
 
         imgEmail.setOnClickListener(imgListener);
@@ -238,7 +244,6 @@ public class ProfileActivity extends AppCompatActivity {
         }
     }
     //Intent del Main a Profile
-
 
     private void setBold(EditText editText, TextView label) {
         if(editText.hasFocus()) {
@@ -381,6 +386,7 @@ public class ProfileActivity extends AppCompatActivity {
         selectStateView(textView, valid);
     }
 
+    //For name field, field has not icon
     private void enabledDisabledField(EditText editText, TextView textView, boolean valid) {
         if(valid) {
             editText.setError(null);
@@ -391,6 +397,7 @@ public class ProfileActivity extends AppCompatActivity {
         selectStateView(textView, valid);
     }
 
+    //Save states
     private void selectStateView(View view, boolean state) {
         if(view == lblName) {
             viewModel.setStateName(state);

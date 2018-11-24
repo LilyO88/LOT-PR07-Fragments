@@ -80,6 +80,7 @@ public class MainActivityAdapter extends ListAdapter<User, MainActivityAdapter.V
             btnDelete = ViewCompat.requireViewById(itemView, R.id.card_btnDelete);
             imgAvatar = ViewCompat.requireViewById(itemView, R.id.card_imageView);
 
+            //Listeners edit and delete, for buttons
             if(onEditListener != null) {
                 btnEdit.setOnClickListener(v1 -> onEditListener.onEdit(getAdapterPosition()));
             }
@@ -87,7 +88,7 @@ public class MainActivityAdapter extends ListAdapter<User, MainActivityAdapter.V
                 btnDelete.setOnClickListener(v12 -> onDeleteListener.onDelete(getAdapterPosition()));
             }
         }
-        //TODO: bind()
+
         void bind(User user) {
             lblName.setText(user.getName());
             lblEmail.setText(user.getEmail());
