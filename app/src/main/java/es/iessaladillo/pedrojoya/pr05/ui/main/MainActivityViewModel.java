@@ -3,36 +3,49 @@ package es.iessaladillo.pedrojoya.pr05.ui.main;
 import java.util.List;
 
 import androidx.lifecycle.LiveData;
+import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.ViewModel;
 import es.iessaladillo.pedrojoya.pr05.data.local.Database;
+import es.iessaladillo.pedrojoya.pr05.data.local.model.Avatar;
 import es.iessaladillo.pedrojoya.pr05.data.local.model.User;
 
 public class MainActivityViewModel extends ViewModel {
 
-    private final Database database;
+    private MutableLiveData<Avatar> avatarLiveData = new MutableLiveData<>();
+    private MutableLiveData<User> userLiveData = new MutableLiveData<>();
+    public boolean avatarChanged = false;
+    public boolean listLoaded = true;
+    public boolean profileLoaded = true;
+    public boolean avatarLoaded = false;
 
-    private LiveData<List<User>> users;
 
-    public MainActivityViewModel(Database database) {
-        this.database = database;
+    //Avatar
+    public LiveData<Avatar> getAvatarLiveData() {
+        return avatarLiveData;
     }
 
-    public LiveData<List<User>> getUsers() {
-        if(users == null) {
-            users = database.getUsers();
-        }
-        return users;
+    public Avatar getAvatar() {
+        return avatarLiveData.getValue();
     }
 
-    public void deleteUser(User user) {
-        database.deleteUser(user);
+    public void setAvatar(Avatar avatar) {
+        avatarLiveData.setValue(avatar);
     }
 
-    public void editUser(User user) {
-        database.editUser(user);
+
+
+   //User
+    public LiveData<User> getUserLiveData() {
+        return userLiveData;
     }
 
-    public void addUser(User user) {
-        database.addUser(user);
+    public User getUser() {
+        return userLiveData.getValue();
     }
+
+    public void setUser(User newUser) {
+        userLiveData.postValue(newUser);
+     }
+
+
 }

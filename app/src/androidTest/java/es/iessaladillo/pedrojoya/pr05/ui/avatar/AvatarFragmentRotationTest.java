@@ -12,22 +12,22 @@ import androidx.test.ext.junit.runners.AndroidJUnit4;
 import androidx.test.filters.LargeTest;
 import es.iessaladillo.pedrojoya.pr05.R;
 import es.iessaladillo.pedrojoya.pr05.data.local.Database;
+import es.iessaladillo.pedrojoya.pr05.utils.ResourcesUtils;
+import es.iessaladillo.pedrojoya.pr05.utils.Rotation;
 
-import static android.app.Activity.RESULT_OK;
 import static androidx.test.espresso.Espresso.onView;
 import static androidx.test.espresso.action.ViewActions.click;
-import static androidx.test.espresso.intent.matcher.IntentMatchers.hasExtra;
-import static androidx.test.espresso.matcher.ViewMatchers.assertThat;
+import static androidx.test.espresso.assertion.ViewAssertions.matches;
+import static androidx.test.espresso.matcher.ViewMatchers.withAlpha;
 import static androidx.test.espresso.matcher.ViewMatchers.withId;
-import static org.hamcrest.Matchers.is;
 
 @RunWith(AndroidJUnit4.class)
 @LargeTest
-public class AvatarActivityIntentTest {
+public class AvatarFragmentRotationTest {
 
     @Rule
-    public final IntentsTestRule<AvatarActivity> testRule = new IntentsTestRule<>(
-            AvatarActivity.class, true, false);
+    public final IntentsTestRule<AvatarFragment> testRule = new IntentsTestRule<>(
+            AvatarFragment.class, true, false);
 
     @Before
     public void setup() {
@@ -35,16 +35,15 @@ public class AvatarActivityIntentTest {
                 new Intent().putExtra("EXTRA_AVATAR", Database.getInstance().getDefaultAvatar()));
     }
 
-    // Sending result intent
+    // Rotation
 
     @Test
-    public void shouldReturnAvatarWhenSelectMenuClicked() {
+    public void shouldHaveSameAvatarSelectedAfterRotation() {
         onView(withId(R.id.imgAvatar2)).perform(click());
-        onView(withId(R.id.mnuSelect)).perform(click());
-        int resultCode = testRule.getActivityResult().getResultCode();
-        Intent intent = testRule.getActivityResult().getResultData();
-        assertThat(resultCode, is(RESULT_OK));
-        assertThat(intent, hasExtra("EXTRA_AVATAR", Database.getInstance().queryAvatar(2)));
+        Rotation.rotateScreen(testRule.getActivity());
+        onView(withId(R.id.imgAvatar2)).check(matches(withAlpha(
+                ResourcesUtils.getFloat(testRule.getActivity(),
+                        R.dimen.avatar_selected_image_alpha))));
     }
 
 }

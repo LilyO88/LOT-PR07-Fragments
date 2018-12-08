@@ -35,6 +35,7 @@ public class Database {
         insertUser(new User("Baldo", "baldo@mero.com", "666666666", "Avenida Baldomero", "www.marca.com", queryAvatar(1)));
         insertUser(new User("Germán Ginés", "german@mero.com", "776666666", "Avenida Germán Ginés", "www.marca.com", queryAvatar(2)));
         insertUser(new User("Dolores Fuertes de Barriga", "dolores@fuertes.com", "886666666", "Avenida Dolores", "www.marca.com", queryAvatar(3)));
+
         updateUsersLiveData();
     }
 

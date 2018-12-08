@@ -6,10 +6,13 @@ import android.widget.TextView;
 import androidx.lifecycle.ViewModel;
 import es.iessaladillo.pedrojoya.pr05.data.local.Database;
 import es.iessaladillo.pedrojoya.pr05.data.local.model.Avatar;
+import es.iessaladillo.pedrojoya.pr05.data.local.model.User;
 
-public class ProfileActivityViewModel extends ViewModel {
+public class ProfileFragmentViewModel extends ViewModel {
 
     private Avatar avatar;
+
+    private User user;
 
     private TextView lblName;
     private boolean stateName = true;
@@ -37,6 +40,16 @@ public class ProfileActivityViewModel extends ViewModel {
     private Database database;
 
     private boolean firstInstance = true;
+
+    private boolean haGirado = false;
+
+    public boolean isHaGirado() {
+        return haGirado;
+    }
+
+    public void setHaGirado(boolean haGirado) {
+        this.haGirado = haGirado;
+    }
 
     public Database getDatabase() {
         if(database == null){
@@ -195,4 +208,11 @@ public class ProfileActivityViewModel extends ViewModel {
         this.stateImgWeb = stateImgWeb;
     }
 
+    //User
+    public User getUser() {
+        return user;
+    }
+    public void setUser(User user) {
+        this.user = user;
+    }
 }

@@ -9,10 +9,10 @@
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/constraintLayoutAvatar"
+        android:id="@+id/clAvatar"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context=".ui.avatar.AvatarActivity">
+        tools:context=".ui.avatar.AvatarFragment">
 
         <ImageView
             android:id="@+id/imgAvatar1"

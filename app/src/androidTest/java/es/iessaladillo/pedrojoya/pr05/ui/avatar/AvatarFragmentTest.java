@@ -23,11 +23,11 @@ import static androidx.test.espresso.matcher.ViewMatchers.withId;
 
 @RunWith(AndroidJUnit4.class)
 @LargeTest
-public class AvatarActivityTest {
+public class AvatarFragmentTest {
 
     @Rule
-    public final IntentsTestRule<AvatarActivity> testRule = new IntentsTestRule<>(
-            AvatarActivity.class, true, false);
+    public final IntentsTestRule<AvatarFragment> testRule = new IntentsTestRule<>(
+            AvatarFragment.class, true, false);
 
     @Before
     public void setup() {

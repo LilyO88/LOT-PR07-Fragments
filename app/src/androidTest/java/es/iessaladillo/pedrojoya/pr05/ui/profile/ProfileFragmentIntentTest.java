@@ -17,7 +17,7 @@ import androidx.test.ext.junit.runners.AndroidJUnit4;
 import androidx.test.filters.LargeTest;
 import es.iessaladillo.pedrojoya.pr05.R;
 import es.iessaladillo.pedrojoya.pr05.data.local.Database;
-import es.iessaladillo.pedrojoya.pr05.ui.avatar.AvatarActivity;
+import es.iessaladillo.pedrojoya.pr05.ui.avatar.AvatarFragment;
 
 import static androidx.test.espresso.Espresso.onView;
 import static androidx.test.espresso.action.ViewActions.click;
@@ -39,10 +39,10 @@ import static org.hamcrest.core.AllOf.allOf;
 
 @RunWith(AndroidJUnit4.class)
 @LargeTest
-public class ProfileActivityIntentTest {
+public class ProfileFragmentIntentTest {
 
     @Rule
-    public final IntentsTestRule<ProfileActivity> testRule = new IntentsTestRule<>(ProfileActivity.class);
+    public final IntentsTestRule<ProfileFragment> testRule = new IntentsTestRule<>(ProfileFragment.class);
 
     @Before
     public void setup() {
@@ -89,19 +89,19 @@ public class ProfileActivityIntentTest {
     public void shouldAvatarSendIntent() {
         onView(withId(R.id.imgAvatar)).perform(click());
         // Check sending intent
-        intended(allOf(hasComponent(AvatarActivity.class.getName()),
-                hasExtra(AvatarActivity.EXTRA_AVATAR, Database.getInstance().queryAvatar(1))));
+        intended(allOf(hasComponent(AvatarFragment.class.getName()),
+                hasExtra(AvatarFragment.EXTRA_AVATAR, Database.getInstance().queryAvatar(1))));
     }
 
     @Test
     public void shouldReceiveRightIntent() {
         // Setup the result intent. Needed if is not one of your activities.
         Intent resultData = new Intent();
-        resultData.putExtra(AvatarActivity.EXTRA_AVATAR, Database.getInstance().queryAvatar(2));
+        resultData.putExtra(AvatarFragment.EXTRA_AVATAR, Database.getInstance().queryAvatar(2));
         Instrumentation.ActivityResult result =
                 new Instrumentation.ActivityResult(Activity.RESULT_OK, resultData);
         // We simulate the result intent.
-        intending(hasComponent(AvatarActivity.class.getName())).respondWith(result);
+        intending(hasComponent(AvatarFragment.class.getName())).respondWith(result);
 
         onView(withId(R.id.imgAvatar)).perform(click());
         // Check result set to views.

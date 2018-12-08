@@ -35,10 +35,10 @@ import static org.hamcrest.Matchers.not;
 
 @RunWith(AndroidJUnit4.class)
 @LargeTest
-public class ProfileActivityTest {
+public class ProfileFragmentTest {
 
     @Rule
-    public final IntentsTestRule<ProfileActivity> testRule = new IntentsTestRule<>(ProfileActivity.class);
+    public final IntentsTestRule<ProfileFragment> testRule = new IntentsTestRule<>(ProfileFragment.class);
 
     @Before
     public void setup() {

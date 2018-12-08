@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Profile RecyclerView</string>
+    <string name="app_name">Profile Fragments</string>
     <string name="avatar_label">Select Avatar</string>
     <string name="main_invalid_data">Invalid data</string>
     <string name="main_save">Save</string>

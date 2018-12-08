@@ -27,10 +27,10 @@ import static org.hamcrest.Matchers.not;
 
 @RunWith(AndroidJUnit4.class)
 @LargeTest
-public class ProfileActivityRotationTest {
+public class ProfileFragmentRotationTest {
 
     @Rule
-    public final IntentsTestRule<ProfileActivity> testRule = new IntentsTestRule<>(ProfileActivity.class);
+    public final IntentsTestRule<ProfileFragment> testRule = new IntentsTestRule<>(ProfileFragment.class);
 
     @Before
     public void setup() {
@@ -42,7 +42,7 @@ public class ProfileActivityRotationTest {
     @Test
     public void shouldHaveSameAvatarAfterRotation() {
         onView(withId(R.id.imgAvatar)).perform(click());
-        // Perform click on AvatarActivity to send result and finish.
+        // Perform click on AvatarFragment to send result and finish.
         onView(withId(R.id.imgAvatar2)).perform(click());
         onView(withId(R.id.mnuSelect)).perform(click());
         Rotation.rotateScreen(testRule.getActivity());
